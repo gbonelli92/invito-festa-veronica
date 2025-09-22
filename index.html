@@ -15,15 +15,8 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;background:var(--nero);color:var(--bianco)}
 
-    /* fallback */
-    main{scroll-snap-type:y mandatory; height:100vh; overflow-y:auto;}
-    section{min-height:100vh; display:flex; align-items:flex-start;}
-
-    /* se supportato, usa svh (stabile con barre mobili) */
-    @supports (height: 100svh){
-      main{height:100svh;}
-      section{min-height:100svh;}
-    }
+    main{scroll-snap-type:y mandatory; height:100dvh; overflow-y:auto;}
+    section{min-height:100dvh; display:flex; align-items:flex-start;}
 
 
     .wrap{width:min(92%,760px); margin:40px auto 0;}
@@ -174,7 +167,6 @@
       display:flex; justify-content:center; align-items:center;
       height:140px; opacity:0;
       pointer-events:none;
-      overflow:hidden;
     }
     .glass{
       display:inline-block;
@@ -206,9 +198,7 @@
       100%{transform: translateX(6px)  rotate(-8deg);}
     }
     @keyframes cheersShow{ from{opacity:0} to{opacity:1} }
-@keyframes cheersExit{
-  100%{ opacity:0; transform: translateY(-24px) scale(.97); height:0; padding:0; margin:0; }
-}
+    @keyframes cheersExit{ to{ opacity:0; transform: translateY(-24px) scale(.97); height:0} }
 
   </style>
 </head>
